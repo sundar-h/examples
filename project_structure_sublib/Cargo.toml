@@ -1,0 +1,10 @@
+[package]
+name = "project_structure_sublib"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# 子库依赖
+greetings = { path = "greetings" }

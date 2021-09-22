@@ -1,0 +1,4 @@
+[workspace]
+members = ["example_thread", "project_structure", "project_structure_sublib"]
+
+# project_structure_sublib/greetings
