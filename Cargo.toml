@@ -1,4 +1,9 @@
 [workspace]
-members = ["example_thread", "project_structure", "project_structure_sublib"]
+members = [
+    "example_thread",
+    "project_structure",
+    "project_structure_sublib",
+    "rust_async",
+]
 
 # project_structure_sublib/greetings
