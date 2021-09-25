@@ -4,6 +4,8 @@ members = [
     "project_structure",
     "project_structure_sublib",
     "rust_async",
+    "enum_option_result",       # Option和Result, 组合子
+    "polymorphic",              # 多台
 ]
 
 # project_structure_sublib/greetings
