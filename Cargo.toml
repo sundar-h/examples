@@ -6,6 +6,7 @@ members = [
     "rust_async",
     "enum_option_result",       # Option和Result, 组合子
     "polymorphic",              # 多台
+    "trait_object",
 ]
 
 # project_structure_sublib/greetings

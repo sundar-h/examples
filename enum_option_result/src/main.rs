@@ -4,5 +4,9 @@ fn main() {
     // if let
     // while let
     // 组合子 .and() .or()
-    println!("Hello, world!");
+    let x = Some(3i32);
+    // x.and_then(f)
+    println!("{:?}", x.and::<i32>(Some(9i32)));
+    println!("{:?}", x.and::<i32>(x));
+    // println!("Hello, world!");
 }

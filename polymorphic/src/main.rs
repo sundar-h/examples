@@ -18,14 +18,14 @@ impl Trait for i32 {}
 /// 写法一
 /// 使用方法1: fool::<i32>(x)
 /// 使用方法2: fool(x)
-fn foo1<T: Trait>(args: T) {
-    println!("foo1")
+fn foo1<T: Trait>(_: T) {
+    println!("foo1");
 }
 
 /// 写法二
 /// 使用方法: fool(x)
 /// 使用方法1: 不能使用此方法 fool::<i32>(x)
-fn foo2(args: impl Trait) {
+fn foo2(_: impl Trait) {
     println!("foo2")
 }
 

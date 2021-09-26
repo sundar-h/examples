@@ -17,10 +17,10 @@ fn main() {
     // futures::sink::Sink;
 }
 
-fn printA() -> Box<dyn Custom<Item = u32>> {
-    let a = A { item: 3u32 };
-    Box::new(a)
-}
+// fn printA() -> Box<dyn Custom<Item = u32>> {
+// let a = A { item: 3u32 };
+// Box::new(a)
+// }
 
 trait Custom {
     type Item;
@@ -32,8 +32,8 @@ struct A {
     item: u32,
 }
 
-impl Custom for A {
-    type Item = T;
+// impl Custom for A {
+//     type Item = u32;
 
-    fn a(&self) -> Option<Self::Item> {}
-}
+//     fn a(&self) -> Option<Self::Item> {}
+// }
