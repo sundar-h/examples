@@ -2,9 +2,11 @@ fn main() {
     let p = Person;
     p.walk();
 
-    let p1 = demo();
-    p1.walk();
-    p1.talk();
+    {
+        let p1 = demo();
+        p1.walk();
+        p1.talk();
+    }
 }
 
 // 具体对象的方法
@@ -20,6 +22,13 @@ impl dyn Animal {
         println!("talk")
     }
 }
+
+// impl Drop for dyn Animal {
+//     fn drop(&mut self) {
+//         self.walk();
+//         println!("drop here.");
+//     }
+// }
 
 struct Person;
 impl Animal for Person {}
