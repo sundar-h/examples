@@ -30,9 +30,11 @@ fn foo2(_: impl Trait) {
 }
 
 /// # 返回多态
+#[warn(dead_code)]
 fn return_a_trait_object1() -> Box<dyn Trait> {
     Box::new(1)
 }
+#[warn(dead_code)]
 fn return_a_trait_object2() -> impl Trait {
     5
 }

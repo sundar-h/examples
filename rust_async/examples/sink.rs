@@ -41,31 +41,31 @@ impl ExternalSink {
 //     }
 // }
 
-impl Sink for ExternalSink {
-    type Error;
+// impl Sink for ExternalSink {
+//     // type Error;
 
-    fn poll_ready(
-        self: std::pin::Pin<&mut Self>,
-        cx: &mut std::task::Context<'_>,
-    ) -> std::task::Poll<Result<(), Self::Error>> {
-        todo!()
-    }
+//     fn poll_ready(
+//         self: std::pin::Pin<&mut Self>,
+//         cx: &mut std::task::Context<'_>,
+//     ) -> std::task::Poll<Result<(), Self::Error>> {
+//         todo!()
+//     }
 
-    fn start_send(self: std::pin::Pin<&mut Self>, item: Item) -> Result<(), Self::Error> {
-        todo!()
-    }
+//     fn start_send(self: std::pin::Pin<&mut Self>, item: Item) -> Result<(), Self::Error> {
+//         todo!()
+//     }
 
-    fn poll_flush(
-        self: std::pin::Pin<&mut Self>,
-        cx: &mut std::task::Context<'_>,
-    ) -> std::task::Poll<Result<(), Self::Error>> {
-        todo!()
-    }
+//     fn poll_flush(
+//         self: std::pin::Pin<&mut Self>,
+//         cx: &mut std::task::Context<'_>,
+//     ) -> std::task::Poll<Result<(), Self::Error>> {
+//         todo!()
+//     }
 
-    fn poll_close(
-        self: std::pin::Pin<&mut Self>,
-        cx: &mut std::task::Context<'_>,
-    ) -> std::task::Poll<Result<(), Self::Error>> {
-        todo!()
-    }
-}
+//     fn poll_close(
+//         self: std::pin::Pin<&mut Self>,
+//         cx: &mut std::task::Context<'_>,
+//     ) -> std::task::Poll<Result<(), Self::Error>> {
+//         todo!()
+//     }
+// }

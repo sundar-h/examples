@@ -7,6 +7,8 @@ edition = "2021"
 
 [dependencies]
 anyhow = "1.0.44"
+async-stream = "0.3.2"
+async-trait = "0.1.51"
 chrono = "0.4.19"
 futures = "0.3.17"
 paho-mqtt = "0.9.1"
