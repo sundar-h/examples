@@ -1,5 +1,5 @@
-// use futures::{Stream, StreamExt};
-use futures::Stream;
+use futures::{Stream, StreamExt};
+// use futures::Stream;
 use mqtt::Message;
 use paho_mqtt as mqtt;
 use std::{
@@ -20,20 +20,21 @@ struct MQTT {
     // stream: Pin<&'a mut dyn Stream<Item = Option<Message>>>,
     // stream: Option<&'a Pin<&'a mut dyn Stream<Item = Option<Message>>>>,
     // stream: Option<&'a mut dyn Stream<Item = Option<Message>>>,
-    stream: Option<Pin<Box<dyn Stream<Item = Option<Message>>>>>,
+    // stream: Option<Pin<Box<dyn Stream<Item = Option<Message>>>>>,
     // stream: <Pin<Box<dyn Stream<Item = Option<Message>>>>,
     // stream: Option<Box<dyn Stream<Item = Option<Message>>>>,
+    stream: Option<futures::channel::mpsc::Receiver<Option<Message>>>,
     // stream: Option<Box<dyn Stream<Item = T>>>,
 }
 
 impl MQTT {
-    fn new() -> MQTT {
-        MQTT {
-            client: None,
-            // stream: pin
-            stream: None::<Pin<Box<dyn Stream<Item = Option<Message>>>>>,
-        }
-    }
+    // fn new() -> MQTT {
+    //     MQTT {
+    //         client: None,
+    //         // stream: pin
+    //         // stream: None::<Pin<Box<dyn Stream<Item = Option<Message>>>>>,
+    //     }
+    // }
 
     async fn init(&mut self) -> anyhow::Result<()> {
         let create_opts = mqtt::CreateOptionsBuilder::new()
@@ -41,7 +42,10 @@ impl MQTT {
             .client_id("rust_async_subscribe")
             .finalize();
 
-        self.client = Some(mqtt::AsyncClient::new(create_opts)?);
+        let mut cli = mqtt::AsyncClient::new(create_opts)?;
+        let mut strm = cli.get_stream(52);
+
+        // self.client = Some(mqtt::AsyncClient::new(create_opts)?);
 
         let lwt = mqtt::Message::new("test", "Async subscriber lost connection", mqtt::QOS_1);
 
@@ -59,11 +63,18 @@ impl MQTT {
         cli.connect(conn_opts).await?;
 
         cli.subscribe_many(&["test"], &[1, 1]).await?;
-        // let mut stream = cli.get_stream(52);
+
+        let mut stream = cli.get_stream(52);
+        let msg = stream.next().await.unwrap();
+        let msg = msg.unwrap();
+        // msg.payload();
+        msg.to_string().as_str();
+        // let strm = stream as Box::from<dyn Stream>;
 
         // self.stream = Some(Box::new(cli.get_stream(52)));
-        self.stream = Some(Box::pin(cli.get_stream(52)));
-        // self.stream = Some(Box::new(stream));
+        // self.stream = Some(cli.get_stream(52));
+        // self.stream = Some(Box::pin(cli.get_stream(52)));
+        self.stream = Some(stream);
 
         Ok(())
     }
@@ -78,10 +89,9 @@ impl Stream for MQTT {
     // type Item = T;
 
     fn poll_next(mut self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Option<Self::Item>> {
-        // self.stream.unwrap()
-        let stream = self.stream.as_mut().unwrap();
+        let stream = self.stream.unwrap();
 
-        match stream.poll_next(cx) {
+        match stream.poll_next_unpin(cx) {
             Poll::Ready(msg) => {
                 if msg.is_none() {
                     return Poll::Ready(None);
@@ -95,8 +105,8 @@ impl Stream for MQTT {
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
-    let mut m = MQTT::new();
-    m.init().await?;
+    // let mut m = MQTT::new();
+    // m.init().await?;
     // let stream = m.get_stream();
     // while let Some(msg) = stream.next().await {
     //     if let Some(msg) = msg {

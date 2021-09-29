@@ -7,6 +7,7 @@ members = [
     "enum_option_result",       # Option和Result, 组合子
     "polymorphic",              # 多台
     "trait_object",
+    "ffi"
 ]
 
 # project_structure_sublib/greetings

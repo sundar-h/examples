@@ -84,16 +84,16 @@ impl WrapperToString {
     }
 }
 
-impl Stream for WrapperToString {
-    type Item = String;
+// impl Stream for WrapperToString {
+//     type Item = String;
 
-    fn poll_next(mut self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Option<Self::Item>> {
-        // self.couter.poll_next_unpin(cx)
-        match self.couter.poll_next_unpin(cx) {
-            Poll::Ready(msg) => {
-            }
-            Poll::Pending => {
-            }
-        }
-    }
-}
+//     fn poll_next(mut self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Option<Self::Item>> {
+//         // self.couter.poll_next_unpin(cx)
+//         match self.couter.poll_next_unpin(cx) {
+//             Poll::Ready(msg) => {
+//             }
+//             Poll::Pending => {
+//             }
+//         }
+//     }
+// }
