@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="CPP_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/enum_option_result/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/enum_option_result/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/example_thread/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ffi/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/polymorphic/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/project_structure/benches" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/project_structure/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/project_structure/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/project_structure/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/project_structure_sublib/greetings/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/project_structure_sublib/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/rust_async/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/rust_async/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/trait_object/src" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
