@@ -157,23 +157,11 @@ fn bindgen_test_layout_GoSlice() {
     );
 }
 extern "C" {
-    pub fn NextMessage() -> *mut ::std::os::raw::c_char;
+    pub fn SetName(str_: *mut ::std::os::raw::c_char);
 }
 extern "C" {
-    pub fn Name() -> *mut ::std::os::raw::c_char;
+    pub fn TriggerCallback();
 }
 extern "C" {
-    pub fn Initialize();
-}
-extern "C" {
-    pub fn Publish(payload: *mut ::std::os::raw::c_char);
-}
-extern "C" {
-    pub fn Finalize();
-}
-extern "C" {
-    pub fn Null() -> *mut ::std::os::raw::c_char;
-}
-extern "C" {
-    pub fn Empty() -> *mut ::std::os::raw::c_char;
+    pub fn RegisterCallback(callback: *mut ::std::os::raw::c_void) -> GoInt;
 }
