@@ -48,6 +48,46 @@ fn bindgen_test_layout__GoString_() {
         )
     );
 }
+pub type rust_callback = ::std::option::Option<unsafe extern "C" fn(arg1: ::std::os::raw::c_int)>;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct Context {
+    pub name: *const ::std::os::raw::c_char,
+    pub year: ::std::os::raw::c_int,
+}
+#[test]
+fn bindgen_test_layout_Context() {
+    assert_eq!(
+        ::std::mem::size_of::<Context>(),
+        16usize,
+        concat!("Size of: ", stringify!(Context))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<Context>(),
+        8usize,
+        concat!("Alignment of ", stringify!(Context))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<Context>())).name as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(Context),
+            "::",
+            stringify!(name)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<Context>())).year as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(Context),
+            "::",
+            stringify!(year)
+        )
+    );
+}
 pub type GoInt8 = ::std::os::raw::c_schar;
 pub type GoUint8 = ::std::os::raw::c_uchar;
 pub type GoInt16 = ::std::os::raw::c_short;
@@ -157,11 +197,8 @@ fn bindgen_test_layout_GoSlice() {
     );
 }
 extern "C" {
-    pub fn SetName(str_: *mut ::std::os::raw::c_char);
+    pub fn trigger_callback_simple(cb: rust_callback);
 }
 extern "C" {
-    pub fn TriggerCallback();
-}
-extern "C" {
-    pub fn RegisterCallback(callback: *mut ::std::os::raw::c_void) -> GoInt;
+    pub fn trigger_callback_struct(ctx: *mut Context, cb: rust_callback);
 }

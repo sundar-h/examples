@@ -19,6 +19,11 @@ typedef struct { const char *p; ptrdiff_t n; } _GoString_;
 /* Start of preamble from import "C" comments.  */
 
 
+#line 3 "main.go"
+
+#include "./common/shared.c"
+
+#line 1 "cgo-generated-wrapper"
 
 
 /* End of preamble from import "C" comments.  */
@@ -68,9 +73,11 @@ typedef struct { void *data; GoInt len; GoInt cap; } GoSlice;
 extern "C" {
 #endif
 
-extern void SetName(char* str);
-extern void TriggerCallback();
-extern GoInt RegisterCallback(void* callback);
+
+// 不能直接通过go调用cb()
+// 或者赋值 C.cb = cb
+extern void trigger_callback_simple(rust_callback cb);
+extern void trigger_callback_struct(struct Context* ctx, rust_callback cb);
 
 #ifdef __cplusplus
 }
