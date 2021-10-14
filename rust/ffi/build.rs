@@ -10,9 +10,5 @@
 // fn main() {
 //     cc::Build::new()
 //         .file("shared/common/shared.c")
-//         .compile("shared.so");
+//         .compile("libshared.so");
 // }
-
-fn main() {
-
-}

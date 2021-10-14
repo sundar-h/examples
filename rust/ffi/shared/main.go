@@ -16,7 +16,7 @@ func trigger_callback_simple(cb C.rust_callback) {
 }
 
 //export trigger_callback_struct
-func trigger_callback_struct(ctx *C.struct_Context, cb C.rust_callback) {
+func trigger_callback_struct(ctx *C.Context, cb C.rust_callback) {
     fmt.Printf("Got trigger_callback_struct: %v\n", ctx)
     C.c_trigger_callback_struct(ctx, cb)
 }

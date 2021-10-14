@@ -10,10 +10,10 @@ static inline int c_trigger_callback_simple(rust_callback callback) {
 }
 
 // ****************************************************************************************
-struct Context {
+typedef struct Context {
     const char *name;
     int year;
-};
+} Context;
 
 
 static inline int c_trigger_callback_struct(struct Context *ctx, rust_callback callback) {

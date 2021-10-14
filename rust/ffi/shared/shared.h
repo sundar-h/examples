@@ -77,7 +77,7 @@ extern "C" {
 // 不能直接通过go调用cb()
 // 或者赋值 C.cb = cb
 extern void trigger_callback_simple(rust_callback cb);
-extern void trigger_callback_struct(struct Context* ctx, rust_callback cb);
+extern void trigger_callback_struct(Context* ctx, rust_callback cb);
 
 #ifdef __cplusplus
 }

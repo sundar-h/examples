@@ -56,9 +56,9 @@ trait Generator {
 }
 
 enum GeneratorA {
-    Enter(i32),
-    Yield(i32),
-    Exit,
+    Enter(i32), // 初始化
+    Yield(i32), // 暂停点
+    Exit, // 退出状态
 }
 
 impl GeneratorA {
