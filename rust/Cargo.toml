@@ -9,6 +9,7 @@ members = [
     "trait_object",
     "ffi",
     "basic",
+    "thiserror_example",
 ]
 
 # project_structure_sublib/greetings
