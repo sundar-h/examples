@@ -1,0 +1,7 @@
+[workspace]
+members = [
+    "manager/job",
+    "manager/task",
+    "plugins",
+    "plugins/examples/rust_2_c",
+]
