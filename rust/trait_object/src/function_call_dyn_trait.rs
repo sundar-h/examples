@@ -56,29 +56,49 @@ impl Animal for SPeople {
 }
 
 // 这里Super trait和 Sub trait 都可以
-fn call_reference(t: &dyn Animal) {
+fn call_reference_animal(t: &dyn Animal) {
     t.walk();
     t.eat();
 }
 
 // 这里Super trait和 Sub trait 都可以
-fn call_box(t: Box<dyn Animal>) {
+fn call_box_animal(t: Box<dyn Animal>) {
     t.walk();
     t.eat();
 }
 
+fn call_reference_people(t: &dyn People) {
+    t.think();
+    t.walk();
+
+    // t.eat();
+    (t as &dyn Animal).eat();
+}
+
+// fn call_box_people(t: Box<dyn People>) {
+//     t.think();
+//     t.walk();
+//     t.eat();
+// }
+
+// 1. &dyn trait --> 还原原类型
+// 2. &dyn trait 父trait 当子trait使用
+
 pub fn run() {
     println!("*****************************8");
     let animal = SAnimal;
-    call_reference(&animal);
+    call_reference_animal(&animal);
     println!("************Box*****************8");
-    call_box(Box::new(animal));
+    call_box_animal(Box::new(animal));
 
-    println!("*****************************8");
+    println!("*************down stream 降级使用****************8");
     let people = SPeople;
-    // 可以降级 当子类型使用
-    call_reference(&people);
+    // SuperTrait 可以降级 当子类型使用
+    call_reference_animal(&people);
     println!("************Box*****************8");
     // impl trait 也可以降级 当子类型使用
-    call_box(Box::new(people));
+    call_box_animal(Box::new(people));
+
+    // upcasting --> downcasting
+    call_reference_people(&people);
 }

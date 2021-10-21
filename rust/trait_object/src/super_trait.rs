@@ -4,7 +4,7 @@ trait Animal {
     }
 }
 
-impl dyn Animal {
+impl<'a> dyn Animal + 'a {
     fn eat(&self) {
         println!("eat");
     }
@@ -40,7 +40,7 @@ pub fn run() {
 
     a.walk();
     a.think();
-    // a.eat();
+    a.eat();
 
     // let a = a as Box<dyn Animal>;
 
