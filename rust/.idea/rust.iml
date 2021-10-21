@@ -18,6 +18,8 @@
       <sourceFolder url="file://$MODULE_DIR$/trait_object/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/basic/examples" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/basic/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/thiserror_example/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/thiserror_example/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />

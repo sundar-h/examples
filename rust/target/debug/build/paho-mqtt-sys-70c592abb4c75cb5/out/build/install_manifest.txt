@@ -1,0 +1,30 @@
+/Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/share/doc/Eclipse Paho C/samples/MQTTAsync_publish.c
+/Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/share/doc/Eclipse Paho C/samples/MQTTAsync_publish_time.c
+/Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/share/doc/Eclipse Paho C/samples/MQTTAsync_subscribe.c
+/Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/share/doc/Eclipse Paho C/samples/MQTTClient_publish.c
+/Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/share/doc/Eclipse Paho C/samples/MQTTClient_publish_async.c
+/Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/share/doc/Eclipse Paho C/samples/MQTTClient_subscribe.c
+/Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/share/doc/Eclipse Paho C/samples/paho_c_pub.c
+/Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/share/doc/Eclipse Paho C/samples/paho_c_sub.c
+/Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/share/doc/Eclipse Paho C/samples/paho_cs_pub.c
+/Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/share/doc/Eclipse Paho C/samples/paho_cs_sub.c
+/Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/share/doc/Eclipse Paho C/samples/pubsub_opts.c
+/Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/share/doc/Eclipse Paho C/CONTRIBUTING.md
+/Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/share/doc/Eclipse Paho C/epl-v20
+/Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/share/doc/Eclipse Paho C/edl-v10
+/Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/share/doc/Eclipse Paho C/README.md
+/Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/share/doc/Eclipse Paho C/notice.html
+/Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/lib/libpaho-mqtt3c.a
+/Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/lib/libpaho-mqtt3a.a
+/Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/include/MQTTAsync.h
+/Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/include/MQTTClient.h
+/Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/include/MQTTClientPersistence.h
+/Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/include/MQTTProperties.h
+/Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/include/MQTTReasonCodes.h
+/Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/include/MQTTSubscribeOpts.h
+/Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/include/MQTTExportDeclarations.h
+/Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/lib/libpaho-mqtt3cs.a
+/Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/lib/libpaho-mqtt3as.a
+/Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/lib/cmake/eclipse-paho-mqtt-c/eclipse-paho-mqtt-cConfig.cmake
+/Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/lib/cmake/eclipse-paho-mqtt-c/eclipse-paho-mqtt-cConfig-debug.cmake
+/Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/lib/cmake/eclipse-paho-mqtt-c/eclipse-paho-mqtt-cConfigVersion.cmake

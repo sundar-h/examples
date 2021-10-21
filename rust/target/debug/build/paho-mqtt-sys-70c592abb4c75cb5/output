@@ -1,0 +1,122 @@
+debug:Running the bundled build for Paho C
+cargo:rerun-if-changed=build.rs
+running: "cmake" "/Users/mac/.cargo/registry/src/github.com-1ecc6299db9ec823/paho-mqtt-sys-0.5.0/paho.mqtt.c/" "-DPAHO_BUILD_SHARED=off" "-DPAHO_BUILD_STATIC=on" "-DPAHO_ENABLE_TESTING=off" "-DPAHO_HIGH_PERFORMANCE=on" "-DPAHO_WITH_SSL=on" "-DOPENSSL_ROOT_DIR=/usr/local/opt/openssl@1.1" "-DCMAKE_INSTALL_PREFIX=/Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out" "-DCMAKE_C_FLAGS= -ffunction-sections -fdata-sections -fPIC -m64 -arch x86_64" "-DCMAKE_C_COMPILER=/usr/bin/cc" "-DCMAKE_CXX_FLAGS= -ffunction-sections -fdata-sections -fPIC -m64 -arch x86_64" "-DCMAKE_CXX_COMPILER=/usr/bin/c++" "-DCMAKE_ASM_FLAGS= -ffunction-sections -fdata-sections -fPIC -m64 -arch x86_64" "-DCMAKE_ASM_COMPILER=/usr/bin/cc" "-DCMAKE_BUILD_TYPE=Debug"
+-- The C compiler identification is AppleClang 12.0.5.12050022
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- CMake version: 3.21.3
+-- CMake system name: Darwin
+-- Timestamp is 2021-10-16T13:46:06Z
+-- Found OpenSSL: /usr/local/opt/openssl@1.1/lib/libcrypto.dylib (found version "1.1.1l")  
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/build
+running: "cmake" "--build" "." "--target" "install" "--config" "Debug" "--"
+[  9%] Building C object src/CMakeFiles/common_obj_static.dir/MQTTProtocolClient.c.o
+[  9%] Building C object src/CMakeFiles/common_ssl_obj_static.dir/Clients.c.o
+[  9%] Building C object src/CMakeFiles/common_ssl_obj_static.dir/MQTTProtocolClient.c.o
+[ 12%] Building C object src/CMakeFiles/common_obj_static.dir/MQTTTime.c.o
+[ 12%] Building C object src/CMakeFiles/common_ssl_obj_static.dir/utf-8.c.o
+[ 12%] Building C object src/CMakeFiles/common_ssl_obj_static.dir/MQTTTime.c.o
+[ 12%] Building C object src/CMakeFiles/common_obj_static.dir/Clients.c.o
+[ 14%] Building C object src/CMakeFiles/common_obj_static.dir/utf-8.c.o
+[ 16%] Building C object src/CMakeFiles/common_ssl_obj_static.dir/MQTTPacket.c.o
+[ 18%] Building C object src/CMakeFiles/common_obj_static.dir/MQTTPacket.c.o
+[ 20%] Building C object src/CMakeFiles/common_ssl_obj_static.dir/MQTTPacketOut.c.o
+[ 22%] Building C object src/CMakeFiles/common_ssl_obj_static.dir/Messages.c.o
+[ 24%] Building C object src/CMakeFiles/common_obj_static.dir/MQTTPacketOut.c.o
+[ 25%] Building C object src/CMakeFiles/common_ssl_obj_static.dir/Tree.c.o
+[ 27%] Building C object src/CMakeFiles/common_obj_static.dir/Messages.c.o
+[ 29%] Building C object src/CMakeFiles/common_obj_static.dir/Tree.c.o
+[ 31%] Building C object src/CMakeFiles/common_obj_static.dir/Socket.c.o
+[ 33%] Building C object src/CMakeFiles/common_obj_static.dir/Log.c.o
+[ 35%] Building C object src/CMakeFiles/common_obj_static.dir/MQTTPersistence.c.o
+[ 37%] Building C object src/CMakeFiles/common_obj_static.dir/Thread.c.o
+[ 38%] Building C object src/CMakeFiles/common_ssl_obj_static.dir/Socket.c.o
+[ 40%] Building C object src/CMakeFiles/common_ssl_obj_static.dir/Log.c.o
+[ 42%] Building C object src/CMakeFiles/common_obj_static.dir/MQTTProtocolOut.c.o
+[ 44%] Building C object src/CMakeFiles/common_ssl_obj_static.dir/MQTTPersistence.c.o
+[ 46%] Building C object src/CMakeFiles/common_obj_static.dir/MQTTPersistenceDefault.c.o
+[ 48%] Building C object src/CMakeFiles/common_obj_static.dir/SocketBuffer.c.o
+[ 50%] Building C object src/CMakeFiles/common_ssl_obj_static.dir/Thread.c.o
+[ 51%] Building C object src/CMakeFiles/common_ssl_obj_static.dir/MQTTProtocolOut.c.o
+[ 53%] Building C object src/CMakeFiles/common_ssl_obj_static.dir/MQTTPersistenceDefault.c.o
+[ 55%] Building C object src/CMakeFiles/common_obj_static.dir/LinkedList.c.o
+[ 57%] Building C object src/CMakeFiles/common_ssl_obj_static.dir/SocketBuffer.c.o
+[ 61%] Building C object src/CMakeFiles/common_ssl_obj_static.dir/LinkedList.c.o
+[ 61%] Building C object src/CMakeFiles/common_obj_static.dir/MQTTProperties.c.o
+[ 62%] Building C object src/CMakeFiles/common_obj_static.dir/MQTTReasonCodes.c.o
+[ 64%] Building C object src/CMakeFiles/common_ssl_obj_static.dir/MQTTProperties.c.o
+[ 66%] Building C object src/CMakeFiles/common_obj_static.dir/Base64.c.o
+[ 68%] Building C object src/CMakeFiles/common_obj_static.dir/SHA1.c.o
+[ 72%] Building C object src/CMakeFiles/common_obj_static.dir/WebSocket.c.o
+[ 72%] Building C object src/CMakeFiles/common_ssl_obj_static.dir/MQTTReasonCodes.c.o
+[ 74%] Building C object src/CMakeFiles/common_ssl_obj_static.dir/Base64.c.o
+[ 75%] Building C object src/CMakeFiles/common_ssl_obj_static.dir/SHA1.c.o
+[ 77%] Building C object src/CMakeFiles/common_ssl_obj_static.dir/WebSocket.c.o
+[ 77%] Built target common_obj_static
+[ 83%] Building C object src/CMakeFiles/paho-mqtt3a-static.dir/MQTTAsyncUtils.c.o
+[ 83%] Building C object src/CMakeFiles/paho-mqtt3a-static.dir/MQTTAsync.c.o
+[ 83%] Building C object src/CMakeFiles/paho-mqtt3c-static.dir/MQTTClient.c.o
+[ 83%] Built target common_ssl_obj_static
+[ 85%] Building C object src/CMakeFiles/paho-mqtt3as-static.dir/MQTTAsyncUtils.c.o
+[ 90%] Building C object src/CMakeFiles/paho-mqtt3as-static.dir/SSLSocket.c.o
+[ 90%] Building C object src/CMakeFiles/paho-mqtt3as-static.dir/MQTTAsync.c.o
+[ 90%] Building C object src/CMakeFiles/paho-mqtt3cs-static.dir/MQTTClient.c.o
+[ 92%] Building C object src/CMakeFiles/paho-mqtt3cs-static.dir/SSLSocket.c.o
+[ 94%] Linking C static library libpaho-mqtt3c.a
+[ 96%] Linking C static library libpaho-mqtt3a.a
+[ 96%] Built target paho-mqtt3c-static
+[ 96%] Built target paho-mqtt3a-static
+[ 98%] Linking C static library libpaho-mqtt3cs.a
+[100%] Linking C static library libpaho-mqtt3as.a
+[100%] Built target paho-mqtt3cs-static
+[100%] Built target paho-mqtt3as-static
+Install the project...
+-- Install configuration: "Debug"
+-- Installing: /Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/share/doc/Eclipse Paho C/samples/MQTTAsync_publish.c
+-- Installing: /Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/share/doc/Eclipse Paho C/samples/MQTTAsync_publish_time.c
+-- Installing: /Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/share/doc/Eclipse Paho C/samples/MQTTAsync_subscribe.c
+-- Installing: /Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/share/doc/Eclipse Paho C/samples/MQTTClient_publish.c
+-- Installing: /Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/share/doc/Eclipse Paho C/samples/MQTTClient_publish_async.c
+-- Installing: /Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/share/doc/Eclipse Paho C/samples/MQTTClient_subscribe.c
+-- Installing: /Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/share/doc/Eclipse Paho C/samples/paho_c_pub.c
+-- Installing: /Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/share/doc/Eclipse Paho C/samples/paho_c_sub.c
+-- Installing: /Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/share/doc/Eclipse Paho C/samples/paho_cs_pub.c
+-- Installing: /Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/share/doc/Eclipse Paho C/samples/paho_cs_sub.c
+-- Installing: /Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/share/doc/Eclipse Paho C/samples/pubsub_opts.c
+-- Installing: /Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/share/doc/Eclipse Paho C/CONTRIBUTING.md
+-- Installing: /Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/share/doc/Eclipse Paho C/epl-v20
+-- Installing: /Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/share/doc/Eclipse Paho C/edl-v10
+-- Installing: /Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/share/doc/Eclipse Paho C/README.md
+-- Installing: /Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/share/doc/Eclipse Paho C/notice.html
+-- Installing: /Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/lib/libpaho-mqtt3c.a
+-- Installing: /Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/lib/libpaho-mqtt3a.a
+-- Installing: /Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/include/MQTTAsync.h
+-- Installing: /Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/include/MQTTClient.h
+-- Installing: /Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/include/MQTTClientPersistence.h
+-- Installing: /Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/include/MQTTProperties.h
+-- Installing: /Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/include/MQTTReasonCodes.h
+-- Installing: /Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/include/MQTTSubscribeOpts.h
+-- Installing: /Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/include/MQTTExportDeclarations.h
+-- Installing: /Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/lib/libpaho-mqtt3cs.a
+-- Installing: /Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/lib/libpaho-mqtt3as.a
+-- Installing: /Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/lib/cmake/eclipse-paho-mqtt-c/eclipse-paho-mqtt-cConfig.cmake
+-- Installing: /Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/lib/cmake/eclipse-paho-mqtt-c/eclipse-paho-mqtt-cConfig-debug.cmake
+-- Installing: /Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/lib/cmake/eclipse-paho-mqtt-c/eclipse-paho-mqtt-cConfigVersion.cmake
+cargo:root=/Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out
+debug:CMake output dir: /Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out
+debug:link Using SSL library
+debug:Using Paho C library at: /Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/lib [paho-mqtt3as]
+debug:Using Paho C headers at: /Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/include
+debug:Using existing Paho C binding for target: x86_64-apple-darwin
+debug:Target Pointer Width: 64
+debug:Using bindings from: bindings/bindings_paho_mqtt_c_1.3.8-x86_64-apple-darwin.rs
+cargo:rustc-link-lib=ssl
+cargo:rustc-link-lib=crypto
+cargo:rustc-link-search=/usr/local/opt/openssl@1.1/lib
+cargo:rustc-link-search=native=/Users/mac/data/example/rust/target/debug/build/paho-mqtt-sys-70c592abb4c75cb5/out/lib
+cargo:rustc-link-lib=static=paho-mqtt3as
