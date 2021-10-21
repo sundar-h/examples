@@ -9,8 +9,7 @@ typedef void (*RustCallback)(Event *e);
 //
 //struct Object;
 
-int init(char* body);
-const char* error();
+const char* init(char* body);
 
 //typedef struct Context {
 //    RustCallback callback;

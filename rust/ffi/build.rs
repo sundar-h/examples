@@ -12,3 +12,7 @@
 //         .file("shared/common/shared.c")
 //         .compile("libshared.so");
 // }
+
+
+fn main() {
+}
