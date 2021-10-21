@@ -1,1 +1,0 @@
-/Users/mac/data/example/rust/target/debug/libtrait_object.rlib: /Users/mac/data/example/rust/trait_object/src/dyn_trait.rs /Users/mac/data/example/rust/trait_object/src/function_call_dyn_trait.rs /Users/mac/data/example/rust/trait_object/src/lib.rs /Users/mac/data/example/rust/trait_object/src/sizeof.rs /Users/mac/data/example/rust/trait_object/src/super_trait.rs
