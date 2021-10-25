@@ -1,7 +1,22 @@
+[package]
+name = "faas"
+version = "0.1.0"
+authors = ["sanghaifa"]
+edition = "2021"
+readme = "README.md"
+repository = "https://gitlab.sz.sensetime.com/viper/lite/lambda/runtime"
+documentation = "https://gitlab.sz.sensetime.com/viper/lite/lambda/runtime"
+homepage = "https://gitlab.sz.sensetime.com/viper/lite/lambda/runtime"
+
+
+[dependencies.plugin]
+path = "core/plugin"
+
 [workspace]
 members = [
-    "manager/job",
-    "manager/task",
-    "plugins",
-    "plugins/examples/rust_2_c",
+    "core/plugin",
+    "core/manager",
+    "core/runtime",
+    "plugins/sink/mqtt_rust",
+    "core/plugin/examples/rust_2_c",
 ]

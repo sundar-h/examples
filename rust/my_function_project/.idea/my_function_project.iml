@@ -8,6 +8,19 @@
       <sourceFolder url="file://$MODULE_DIR$/plugins/examples/rust_2_c/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/plugins/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/plugins/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/core/manager/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/core/plugin/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/core/plugin/examples/rust_2_c/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/core/plugin/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/core/plugin/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/core/plugins/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/core/plugins/examples/rust_2_c/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/core/plugins/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/core/plugins/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/core/runtime/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/plugins/sink/mqtt_rust/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />

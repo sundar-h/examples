@@ -1,5 +1,4 @@
 use crate::errors::PluginError;
-use std::intrinsics::sub_with_overflow;
 use std::os::raw::c_char;
 
 // #[repr(C)]
@@ -11,15 +10,22 @@ pub enum PluginType {
     Sink,
     Source,
     Function,
-    Unsupported,
+    UnSupported,
 }
 
-impl From(&str) for PluginType {
-    fn from(s: &str) -> Self {}
+impl From<&str> for PluginType {
+    fn from(s: &str) -> Self {
+        match s.to_lowercase().as_str() {
+            "sink" => PluginType::Sink,
+            "source" => PluginType::Source,
+            "function" => PluginType::Function,
+            _ => PluginType::UnSupported,
+        }
+    }
 }
 
 // Rust实现的插件使用这个, 需要私用abi_stable 来屏蔽版本差异
-pub trait Plugin {
+pub trait BasePlugin {
     fn init(&self, config: &str) -> Result<(), PluginError>;
     fn finalize(&self) -> Result<(), PluginError>;
 

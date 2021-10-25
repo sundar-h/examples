@@ -1,17 +1,14 @@
+// http://chuxiuhong.com/chuxiuhong-rust-patterns-zh/patterns/ffi-export.html
+// 封装屏蔽底层 FFI 交互
+
 use crate::errors::PluginError;
-use crate::{plugin, ExternFinalize, ExternInit, ExternLangType, ExternName, ExternPluginType};
+use crate::{ExternFinalize, ExternInit, ExternLangType, ExternName, ExternPluginType, Sink};
 use std::ffi::{CStr, CString, OsStr};
 use std::os::raw::{c_char, c_int};
 
-use crate::plugin::{Plugin, PluginType};
+use crate::base_plugin::{BasePlugin, PluginType};
 use libloading::os::unix::Symbol as RawSymbol;
 use libloading::{Library, Symbol};
-
-// 数据流出的地方
-trait Sink: Plugin {
-    // 同步操作
-    fn send(&self, payload: String) -> Result<(), PluginError>;
-}
 
 pub struct Vtable {
     extern_name: RawSymbol<ExternName>,
@@ -33,7 +30,7 @@ pub struct ExternSink {
 type ExternSend = extern "C" fn(payload: *const c_char) -> c_char;
 
 impl ExternSink {
-    unsafe fn new<P: AsRef<OsStr>>(filename: P) -> Result<Box<dyn Plugin>, PluginError> {
+    unsafe fn new<P: AsRef<OsStr>>(filename: P) -> Result<Box<dyn BasePlugin>, PluginError> {
         let lib = Library::new(filename)?;
         let extern_name: Symbol<ExternName> = lib.get(b"name")?;
         let extern_init: Symbol<ExternInit> = lib.get(b"init")?;
@@ -42,7 +39,7 @@ impl ExternSink {
         let extern_plugin_type: Symbol<ExternPluginType> = lib.get(b"plugin_type")?;
         let extern_send: Symbol<ExternSend> = lib.get(b"send")?;
 
-        let plugin: Box<dyn Plugin> = Box::new(&Self {
+        let plugin: Box<dyn BasePlugin> = Box::new(&Self {
             library: lib,
             vtable: Vtable {
                 extern_init: extern_init.into_raw(),
@@ -57,7 +54,7 @@ impl ExternSink {
     }
 }
 
-impl Plugin for ExternSink {
+impl BasePlugin for ExternSink {
     fn init(&self, config: &str) -> Result<(), PluginError> {
         let config = CString::new(config.into())?;
         let err = unsafe {
@@ -96,11 +93,12 @@ impl Plugin for ExternSink {
     }
 
     fn plugin_type(&self) -> Result<PluginType, PluginError> {
-        unsafe {
+        let t = unsafe {
             let res = self.vtable.extern_plugin_type();
-            let res = CStr::from_ptr(res).to_str()?;
-            PluginType::from(res)
-        }
+            CStr::from_ptr(res).to_str()?
+        };
+
+        Ok(PluginType::from(t))
     }
 }
 
