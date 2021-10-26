@@ -41,11 +41,36 @@ impl Person {
     }
 }
 
-fn main() {
-    let name: String = String::from("Hello world");
-    let p = Person::new(&name);
+impl From<String> for Person {
+    fn from(name: String) -> Self {
+        Person{
+            name
+        }
+    }
+}
 
-    println!("{:?}", p);
+impl Into<String> for Person {
+    fn into(self) -> String {
+        self.name
+    }
+}
+
+// fn add() -> Person {
+//     "Hello World".to_string()
+// }
+
+// 什么是隐士类型转换， 实现了From和Into, 不会自动转换类型
+// fn add2() -> String {
+//     Person{name: "Hello World".to_string()}
+// }
+
+fn main() {
+    // let name: String = String::from("Hello world");
+    // let p = Person::new(&name);
+    //
+    // println!("{:?}", p);
+
+    // println!("{:?}", add2());
 }
 
 // From<T>: 对于类型为 U 的对象 foo，如果它实现了 From<T>，那么，可以通过 let foo = U::from(bar) 来生成自己。这里，bar 是类型为 T 的对象。

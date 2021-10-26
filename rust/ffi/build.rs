@@ -5,14 +5,10 @@
 // }
 
 // update build.rs file as:
-// extern crate cc;
-//
-// fn main() {
-//     cc::Build::new()
-//         .file("shared/common/shared.c")
-//         .compile("libshared.so");
-// }
-
+extern crate cc;
 
 fn main() {
+    cc::Build::new()
+        .file("src/shared.c")
+        .compile("shared.so");
 }

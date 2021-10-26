@@ -10,6 +10,7 @@ members = [
     "ffi",
     "basic",
     "thiserror_example",
+    "rust_2_c",
 ]
 
 # project_structure_sublib/greetings
