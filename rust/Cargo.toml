@@ -7,10 +7,11 @@ members = [
     "enum_option_result",       # Option和Result, 组合子
     "polymorphic",              # 多台
     "trait_object",
-    "ffi",
     "basic",
     "thiserror_example",
-    "rust_2_c",
+    "ffi/callback",
+    "ffi/rust_2_c",
+    "ffi/use_rust_struct_in_c",
 ]
 
 # project_structure_sublib/greetings

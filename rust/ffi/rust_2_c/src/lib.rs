@@ -2,6 +2,7 @@ use std::collections::HashMap;
 use std::ffi::CString;
 use std::os::raw::c_char;
 
+/// [rust-ffi-omnibus -- Using Rust objects from other languages](http://jakegoulding.com/rust-ffi-omnibus/objects/)
 /// [Rust FFI 实践](https://www.jianshu.com/p/f76631edbbfd)
 /// [Rust functions that return allocated strings](http://jakegoulding.com/rust-ffi-omnibus/string_return/)
 /// [CString](https://doc.rust-lang.org/std/ffi/struct.CString.html)
@@ -11,6 +12,8 @@ use std::os::raw::c_char;
 /// 1. 首先，一个对象如果传递给了调用者，那么所有权会转移到调用者，这个是由 `Box::into_raw(Box::new(....))` 自动完成的。
 /// 2. 其次，借出的对象一旦重新返回Rust,那么所有权就转移回Rust了，这个也是由 `*Box::from_raw(...)` 自动完成的。
 /// 3. 如果想由调用者决定是否获取所有权和何时释放, 使用`&*tensor`避免获取所有权
+
+/// * memory allocated by Rust must be deallocated by Rust.
 ///
 ///
 /// ```

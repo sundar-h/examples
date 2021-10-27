@@ -102,6 +102,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "demo"
+version = "0.1.0"
+dependencies = [
+ "cc",
+]
+
+[[package]]
 name = "enum_option_result"
 version = "0.1.0"
 
