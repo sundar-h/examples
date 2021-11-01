@@ -12,6 +12,8 @@ members = [
     "ffi/callback",
     "ffi/rust_2_c",
     "ffi/use_rust_struct_in_c",
+    "ffi/use_c_struct_in_rust",
+    "ffi/rust-closures-and-ffi",
 ]
 
 # project_structure_sublib/greetings

@@ -8,11 +8,6 @@ pub enum Error {
     Return(String),
 }
 
-// impl From<String> for Error {
-//     fn from(_: String) -> Self {
-//     }
-// }
-
 trait ResultExt {
     fn to_string(&self) -> String ;
 }
