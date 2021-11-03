@@ -1,7 +1,11 @@
-use crate::{BasePlugin, PluginError};
+use crate::plugin::ExternPlugin;
+use crate::errors::Result;
 
-// 数据流出的地方
-pub trait Sink: BasePlugin {
-    // 同步操作
-    fn send(&self, payload: String) -> Result<(), PluginError>;
+// pub struct Sink(ExternPlugin);
+
+pub trait ExternPluginExt {
+    fn send(&self, payload: String) -> Result<()>;
+}
+
+impl ExternPluginExt for ExternPlugin {
 }

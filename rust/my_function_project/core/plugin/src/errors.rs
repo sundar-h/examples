@@ -1,3 +1,5 @@
+pub type Result<T> = core::result::Result<T, PluginError>;
+
 #[derive(thiserror::Error, Debug)]
 pub enum PluginError {
     #[error("load plugin")]
