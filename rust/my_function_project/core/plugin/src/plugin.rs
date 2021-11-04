@@ -1,10 +1,12 @@
+use std::os::raw::c_char;
+
 use libloading::{Library, Symbol};
 
 use crate::errors::*;
-use std::{ffi::OsStr, os::raw::c_char};
 
 // used by host language
 pub trait Plugin {
+    fn name() -> String;
     fn lang_type() -> String;
     fn plugin_type() -> String;
     fn init(config: String) -> Result<()>;
@@ -13,58 +15,47 @@ pub trait Plugin {
 
 pub struct ExternPlugin {
     library: Library,
+    // name_function: Symbol<NameFunction>,
 }
 
-type NameSymbol = extern "C" fn() -> *const c_char;
-type LangTypeSymbol = extern "C" fn() -> *const c_char;
-type PluginTypeSymbol = extern "C" fn() -> *const c_char;
-type InitSymbol = extern "C" fn(config: *const c_char) -> *const c_char;
-type FinalizeSymbol = extern "C" fn() -> *const c_char;
+type NameFunction = unsafe extern "C" fn() -> *const c_char;
+type LangTypeFunction = unsafe extern "C" fn() -> *const c_char;
+type PluginTypeFunction = unsafe extern "C" fn() -> *const c_char;
+type InitializeFunction = unsafe extern "C" fn(config: *const c_char) -> *const c_char;
+type FinalizeFunction = unsafe extern "C" fn() -> *const c_char;
 
 impl ExternPlugin {
-    fn load<P: AsRef<OsStr>>(filename: P) -> Result<Box<dyn Plugin>> {
-        let lib = Library::new(filename)?;
+    fn load(lib_path: &str) -> Result<Self> {
+        let lib = Library::new(lib_path)?;
 
-        let name: Symbol<NameSymbol> = lib.get(b"name")?;
-        let name = name.into_raw();
+        let name  = lib.get::<*mut NameFunction>(b"name\0")?.read();
+        let lang_type  = lib.get::<*mut LangTypeFunction>(b"lang_type\0")?.read();
+        let plugin_type  = lib.get::<*mut PluginTypeFunction>(b"plugin_type\0")?.read();
+        let initialize= lib.get::<*mut InitializeFunction>(b"initialize\0")?.read();
+        let finalize  = lib.get::<*mut FinalizeFunction>(b"finalize\0")?.read();
 
-        let lang_type: Symbol<LangTypeSymbol> = lib.get(b"lang_type")?;
-        let lang_type = lang_type.into_raw();
-
-        let plugin_type: Symbol<PluginTypeSymbol> = lib.get(b"plugin_type")?;
-        let plugin_type = plugin_type.into_raw();
-
-        let init: Symbol<InitSymbol> = lib.get(b"init")?;
-        let init = init.into_raw();
-
-        let finalize: Symbol<FinalizeSymbol> = lib.get(b"finalize")?;
-        let finalize = finalize.into_raw();
-
-        Ok(ExternPlugin{
+        let plugin = ExternPlugin{
             library: lib,
-        })
+        };
+
+        Ok(plugin)
     }
 }
 
-impl Plugin for ExternPlugin {
-    fn lang_type() -> String {
-        todo!()
-    }
+// impl Plugin for ExternPlugin {
+//     fn lang_type() -> String {
+//         todo!()
+//     }
 
-    fn plugin_type() -> String {
-        todo!()
-    }
+//     fn plugin_type() -> String {
+//         todo!()
+//     }
 
-    fn init(config: String) -> Result<()> {
-        todo!()
-    }
+//     fn init(config: String) -> Result<()> {
+//         todo!()
+//     }
 
-    fn finalize() -> Result<()> {
-        todo!()
-    }
-}
-
-// impl Drop for Box<dyn Plugin> {
-//     fn drop(&mut self) {
+//     fn finalize() -> Result<()> {
+//         todo!()
 //     }
 // }

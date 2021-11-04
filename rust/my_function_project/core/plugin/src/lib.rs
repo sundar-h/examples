@@ -6,5 +6,3 @@ pub mod sink;
 pub use sink::Sink;
 
 pub mod source;
-
-pub use plugin::Plugin；
