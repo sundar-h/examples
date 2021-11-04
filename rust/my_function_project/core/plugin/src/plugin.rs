@@ -6,15 +6,15 @@ use crate::errors::*;
 
 // used by host language
 pub trait Plugin {
-    fn name() -> String;
-    fn lang_type() -> String;
-    fn plugin_type() -> String;
-    fn init(config: String) -> Result<()>;
-    fn finalize() -> Result<()>;
+    fn name(&self) -> String;
+    fn lang_type(&self) -> String;
+    fn plugin_type(&self) -> String;
+    fn init(&self, config: String) -> Result<()>;
+    fn finalize(&self) -> Result<()>;
 }
 
 pub struct ExternPlugin {
-    library: Library,
+    pub library: Library,
     // name_function: Symbol<NameFunction>,
 }
 
@@ -25,7 +25,7 @@ type InitializeFunction = unsafe extern "C" fn(config: *const c_char) -> *const 
 type FinalizeFunction = unsafe extern "C" fn() -> *const c_char;
 
 impl ExternPlugin {
-    fn load(lib_path: &str) -> Result<Self> {
+    pub fn load(lib_path: &str) -> Result<Self> {
         let lib = Library::new(lib_path)?;
 
         let name  = lib.get::<*mut NameFunction>(b"name\0")?.read();
@@ -42,20 +42,24 @@ impl ExternPlugin {
     }
 }
 
-// impl Plugin for ExternPlugin {
-//     fn lang_type() -> String {
-//         todo!()
-//     }
+impl Plugin for ExternPlugin {
+    fn name(&self) -> String {
+        todo!()
+    }
 
-//     fn plugin_type() -> String {
-//         todo!()
-//     }
+    fn lang_type(&self) -> String {
+        todo!()
+    }
 
-//     fn init(config: String) -> Result<()> {
-//         todo!()
-//     }
+    fn plugin_type(&self) -> String {
+        todo!()
+    }
 
-//     fn finalize() -> Result<()> {
-//         todo!()
-//     }
-// }
+    fn init(&self, config: String) -> Result<()> {
+        todo!()
+    }
+
+    fn finalize(&self) -> Result<()> {
+        todo!()
+    }
+}
