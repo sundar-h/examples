@@ -1,6 +1,6 @@
 use std::os::raw::c_char;
 
-use libloading::{Library, Symbol};
+use libloading::{Library};
 
 use crate::errors::*;
 
@@ -61,5 +61,11 @@ impl Plugin for ExternPlugin {
 
     fn finalize(&self) -> Result<()> {
         todo!()
+    }
+}
+
+impl Drop for ExternPlugin {
+    fn drop(&mut self) {
+        self.finalize()
     }
 }
