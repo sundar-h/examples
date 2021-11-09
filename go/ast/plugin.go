@@ -1,16 +1,25 @@
 package main
 
-import "fmt"
+import (
+	"go/ast"
+	"go/parser"
+	"go/token"
+)
 
-type A struct {
+func main() {
+	fset := token.NewFileSet()
+	f, err := parser.ParseFile(fset, "", src, 0)
+	panicIfError(err)
+
+	//深度优先遍历打印每一个节点
+	ast.Inspect(f, func(node ast.Node) bool {
+		ast.Print(fset, node)
+		return true
+	})
 }
 
-type Echo interface {
-	echo(string)
+func panicIfError(err error) {
+	if err != nil {
+		panic(err)
+	}
 }
-
-func (a *A) Echo(body string) {
-	fmt.Println(body)
-}
-
-var a = A{}
