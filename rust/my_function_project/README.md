@@ -60,3 +60,13 @@ RUST -> C: cbindgen
 ## 项目
 [hyper](https://github.com/hyperium/hyper)
 [pipewire](https://gitlab.freedesktop.org/pipewire/pipewire-rs)
+
+
+
+## 函数计算
+[AWS Lambda Function](https://docs.aws.amazon.com/zh_cn/lambda/latest/dg/golang-handler.html)
+[AWS Lambda Funciton Golang SDK](https://github.com/aws/aws-lambda-go)
+
+[阿里云 函数计算 代码开发](https://help.aliyun.com/document_detail/157704.htm?spm=a2c4g.11186623.0.0.5240199ebmnTRl#section-fn9-a36-vik)
+[阿里云 函数计算](https://help.aliyun.com/document_detail/181580.html)
+[阿里云 函数计算 Golang SDK](https://github.com/aliyun/fc-go-sdk)
