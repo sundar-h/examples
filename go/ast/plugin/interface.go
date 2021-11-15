@@ -9,7 +9,7 @@ import (
 )
 
 var pluginInfo *C.struct_PluginInfo
-var customPlugin *CustomPlugin
+var customPlugin *CustomSink
 
 func CPluginInfo(pi *PluginInfo) {
 	//C.CString 堆分配的内存,需要手动释放
@@ -39,7 +39,7 @@ func Initilize(config *C.char) *C.char {
 
 	cfg := C.GoString(config)
 
-	customPlugin = &CustomPlugin{}
+	customPlugin = &CustomSink{}
 	if err := customPlugin.Initilize(cfg); err != nil {
 		// 这里内存控制权交出去了，需要外部host语言负责清理
 		return C.CString(err.Error())

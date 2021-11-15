@@ -15,6 +15,9 @@
 
 [stringer 源码](go get golang.org/x/tools/cmd/stringer)
 
+## 两种方案
+
+### 一、通过插件的方式 AST 代码生成 go generater 的方式嵌入
 1. 接受两个参数
 2. 生成一个golang项目(go mod 管理)
 3. 初始化一个plugin.go 代码模板
@@ -35,3 +38,12 @@ f plug show
 1. 生成代码模板
 2. 生成底层cgo代码
 3. 生成动态链接库
+
+### 二、通过SDK的方式，自动包装
+
+
+两种方式 过程原理一致
+
+
+
+## [Golang Cgo](https://pkg.go.dev/cmd/cgo)
