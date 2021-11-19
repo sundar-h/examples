@@ -2,7 +2,6 @@
 package main
 
 import (
-	"bytes"
 	"fmt"
 
 	"github.com/example/echo/sdk"
@@ -17,9 +16,8 @@ func init() {
 	sdk.Register(&p)
 }
 
-func (p *P) Echo(i *sdk.People) {
-	fmt.Printf("Golang Echo %+v\n", i)
-	fmt.Println("Golang Echo", bytes.NewBuffer(i.Content).String())
+func (p *P) Echo(i *sdk.GPeople) {
+	fmt.Printf("Golang Echo: %s\n", i.String())
 }
 
 func main() {
