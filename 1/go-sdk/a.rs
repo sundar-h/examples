@@ -11743,7 +11743,7 @@ extern "C" {
 pub struct People {
     pub name: *mut ::std::os::raw::c_char,
     pub payload: *mut ::std::os::raw::c_char,
-    pub byte: *mut ::std::os::raw::c_uchar,
+    pub content: *mut ::std::os::raw::c_uchar,
     pub age: ::std::os::raw::c_int,
 }
 #[test]
@@ -11779,13 +11779,13 @@ fn bindgen_test_layout_People() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<People>())).byte as *const _ as usize },
+        unsafe { &(*(::std::ptr::null::<People>())).content as *const _ as usize },
         16usize,
         concat!(
             "Offset of field: ",
             stringify!(People),
             "::",
-            stringify!(byte)
+            stringify!(content)
         )
     );
     assert_eq!(

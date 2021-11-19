@@ -10,6 +10,16 @@ import (
 #include <stdlib.h>
 #include <string.h>
 
+// C 定义转换 Go 定义
+// go tool cgo -godefs sdk/echo.go
+//type CPeople struct {
+//	Name            *int8
+//	Payload         *int8
+//	Byte            *uint8
+//	Age             int32
+//	Pad_cgo_0       [4]byte
+//}
+
 // go tool cgo -godefs sdk/echo.go
 typedef struct People {
     char* name;
@@ -29,17 +39,12 @@ static inline People* new_people() {
 	p = malloc(sizeof(*p));
 	return p;
 }
+
+static inline int len_of_uchar(unsigned char* data) {
+	return strlen((char*)data);
+}
  */
 import "C"
-
-// go tool cgo -godefs sdk/echo.go
-//type CPeople struct {
-//	Name            *int8
-//	Payload         *int8
-//	Byte            *uint8
-//	Age             int32
-//	Pad_cgo_0       [4]byte
-//}
 
 
 type People struct {
@@ -50,15 +55,15 @@ type People struct {
 }
 
 
-func fromCBytes(data C.unsign) []byte{
-	//return []{}
+func fromCBytes(cBytes *C.uchar) []byte{
+	return C.GoBytes(unsafe.Pointer(cBytes), C.len_of_uchar(cBytes))
 }
 
 func FromCPeople(p *C.struct_People) *People {
 	return &People{
 		Name:    C.GoString(p.name),
 		Age:    int(p.age),
-		Content: C.GoBytes(unsafe.Pointer(p.content), int(C.strlen(p.content))),
+		Content: fromCBytes(p.content),
 		Payload:    C.GoString(p.payload),
 	}
 }
@@ -69,7 +74,7 @@ func (p People) ToCPeople() *C.struct_People {
 	p2 := C.new_people()
 	p2.name = C.CString(p.Name)
 	p2.age = C.int(p.Age)
-	p2.content = C.CBytes(p.Content)
+	p2.content = (*C.uchar)(C.CBytes(p.Content))
 	p2.payload = C.CString(p.Payload)
 	return p2
 }
