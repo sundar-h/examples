@@ -13,7 +13,7 @@
 
 
 * CNCF Sandbox 项目 [tremor-runtime事件处理引擎](https://nullderef.com/blog/plugin-dynload/)
-* [rust-plugins 系列四篇网站](https://nullderef.com/series/rust-plugins/)
+* [rust-plugins 目录系列四篇网站](https://nullderef.com/series/rust-plugins/)
 
 
 
@@ -54,10 +54,13 @@
 C -> RUST: rust-bindgen
 RUST -> C: cbindgen
 
+c --> cgo: [c-for-go](https://github.com/xlab/c-for-go)
+
 
 
 
 ## 项目
+[Tremor事件驱动系统](https://www.tremor.rs/)
 [hyper](https://github.com/hyperium/hyper)
 [pipewire](https://gitlab.freedesktop.org/pipewire/pipewire-rs)
 

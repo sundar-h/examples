@@ -1,0 +1,2 @@
+[workspace]
+members = ["cbindgen-demo", "cgo-call-rust"]
