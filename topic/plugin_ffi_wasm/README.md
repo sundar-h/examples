@@ -4,6 +4,8 @@
 3. Demo
 
 ### 可行方案
+* IPC(进程间通信)
+* 网络协议通信(RPC, RESTfull 等)
 * FFI-ABI
 * Wasm
 

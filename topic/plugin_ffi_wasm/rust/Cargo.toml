@@ -1,2 +1,2 @@
 [workspace]
-members = ["cbindgen-demo", "cgo-call-rust"]
+members = ["cbindgen-demo", "cgo-call-rust", "c-base/rust-call-c"]
