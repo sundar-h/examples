@@ -1,0 +1,1 @@
+/Users/sanghaifa/data/examples/topic/plugin_ffi_wasm/rust/target/debug/librust_call_c.rlib: /Users/sanghaifa/data/examples/topic/plugin_ffi_wasm/rust/c-base/rust-call-c/build.rs /Users/sanghaifa/data/examples/topic/plugin_ffi_wasm/rust/c-base/rust-call-c/src/cdemo.c /Users/sanghaifa/data/examples/topic/plugin_ffi_wasm/rust/c-base/rust-call-c/src/lib.rs

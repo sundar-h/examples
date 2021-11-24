@@ -33,6 +33,6 @@
 
 // 第二种方式: 使用crate简化这个过程
 fn main() {
-    cc::Build::new().file("src/echo.c").compile("echo");
-    println!("cargo:rerun-if-changed=src/echo.c");
+    cc::Build::new().file("src/cdemo.c").compile("cdemo");
+    println!("cargo:rerun-if-changed=src/cdemo.c");
 }

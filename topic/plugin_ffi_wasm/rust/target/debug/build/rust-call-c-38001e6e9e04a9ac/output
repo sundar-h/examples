@@ -12,16 +12,20 @@ CFLAGS = None
 CRATE_CC_NO_DEFAULTS = None
 DEBUG = Some("true")
 CARGO_CFG_TARGET_FEATURE = Some("cmpxchg16b,fxsr,sse,sse2,sse3,ssse3")
-running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-arch" "x86_64" "-Wall" "-Wextra" "-o" "/Users/sanghaifa/data/examples/topic/plugin_ffi_wasm/rust/target/debug/build/rust-call-c-38001e6e9e04a9ac/out/src/echo.o" "-c" "src/echo.c"
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-g" "-fno-omit-frame-pointer" "-m64" "-arch" "x86_64" "-Wall" "-Wextra" "-o" "/Users/sanghaifa/data/examples/topic/plugin_ffi_wasm/rust/target/debug/build/rust-call-c-38001e6e9e04a9ac/out/src/cdemo.o" "-c" "src/cdemo.c"
+cargo:warning=src/cdemo.c:42:13: warning: address of stack memory associated with local variable 's' returned [-Wreturn-stack-address]
+cargo:warning=     return s;
+cargo:warning=            ^
+cargo:warning=1 warning generated.
 exit status: 0
 AR_x86_64-apple-darwin = None
 AR_x86_64_apple_darwin = None
 HOST_AR = None
 AR = None
-running: "ar" "cq" "/Users/sanghaifa/data/examples/topic/plugin_ffi_wasm/rust/target/debug/build/rust-call-c-38001e6e9e04a9ac/out/libecho.a" "/Users/sanghaifa/data/examples/topic/plugin_ffi_wasm/rust/target/debug/build/rust-call-c-38001e6e9e04a9ac/out/src/echo.o"
+running: "ar" "cq" "/Users/sanghaifa/data/examples/topic/plugin_ffi_wasm/rust/target/debug/build/rust-call-c-38001e6e9e04a9ac/out/libcdemo.a" "/Users/sanghaifa/data/examples/topic/plugin_ffi_wasm/rust/target/debug/build/rust-call-c-38001e6e9e04a9ac/out/src/cdemo.o"
 exit status: 0
-running: "ar" "s" "/Users/sanghaifa/data/examples/topic/plugin_ffi_wasm/rust/target/debug/build/rust-call-c-38001e6e9e04a9ac/out/libecho.a"
+running: "ar" "s" "/Users/sanghaifa/data/examples/topic/plugin_ffi_wasm/rust/target/debug/build/rust-call-c-38001e6e9e04a9ac/out/libcdemo.a"
 exit status: 0
-cargo:rustc-link-lib=static=echo
+cargo:rustc-link-lib=static=cdemo
 cargo:rustc-link-search=native=/Users/sanghaifa/data/examples/topic/plugin_ffi_wasm/rust/target/debug/build/rust-call-c-38001e6e9e04a9ac/out
-cargo:rerun-if-changed=src/echo.c
+cargo:rerun-if-changed=src/cdemo.c

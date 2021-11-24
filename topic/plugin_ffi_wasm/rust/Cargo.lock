@@ -3,6 +3,10 @@
 version = 3
 
 [[package]]
+name = "c-call-rust"
+version = "0.1.0"
+
+[[package]]
 name = "cbindgen-demo"
 version = "0.1.0"
 
