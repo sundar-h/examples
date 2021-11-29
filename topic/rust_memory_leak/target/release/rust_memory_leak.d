@@ -1,0 +1,1 @@
+/mnt/hgfs/sanghaifa/data/examples/topic/rust_memory_leak/target/release/rust_memory_leak: /mnt/hgfs/sanghaifa/data/examples/topic/rust_memory_leak/src/main.rs
