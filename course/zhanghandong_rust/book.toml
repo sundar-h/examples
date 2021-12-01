@@ -1,0 +1,6 @@
+[book]
+authors = ["sanghaifa"]
+language = "en"
+multilingual = false
+src = "src"
+title = "张汉东Rust课程学习笔记"
