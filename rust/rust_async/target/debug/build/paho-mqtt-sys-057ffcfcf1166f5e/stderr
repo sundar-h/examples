@@ -1,0 +1,19 @@
+fatal: not a git repository (or any of the parent directories): .git
+CMake Warning at /opt/local/share/cmake-3.21/Modules/Platform/Darwin-Initialize.cmake:303 (message):
+  Ignoring CMAKE_OSX_SYSROOT value:
+
+   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk
+
+  because the directory does not exist.
+Call Stack (most recent call first):
+  /opt/local/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake:21 (include)
+  CMakeLists.txt:21 (PROJECT)
+
+
+make: warning: -jN forced in submake: disabling jobserver mode.
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib: file: libpaho-mqtt3cs.a(SHA1.c.o) has no symbols
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib: file: libpaho-mqtt3cs.a(SHA1.c.o) has no symbols
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib: file: libpaho-mqtt3as.a(SHA1.c.o) has no symbols
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib: file: libpaho-mqtt3as.a(SHA1.c.o) has no symbols
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib: file: /Users/sanghaifa/data/examples/rust/rust_async/target/debug/build/paho-mqtt-sys-057ffcfcf1166f5e/out/lib/libpaho-mqtt3cs.a(SHA1.c.o) has no symbols
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib: file: /Users/sanghaifa/data/examples/rust/rust_async/target/debug/build/paho-mqtt-sys-057ffcfcf1166f5e/out/lib/libpaho-mqtt3as.a(SHA1.c.o) has no symbols

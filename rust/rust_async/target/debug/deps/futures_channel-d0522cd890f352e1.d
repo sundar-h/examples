@@ -1,0 +1,10 @@
+/Users/sanghaifa/data/examples/rust/rust_async/target/debug/deps/futures_channel-d0522cd890f352e1.rmeta: /Users/sanghaifa/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.17/src/lib.rs /Users/sanghaifa/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.17/src/lock.rs /Users/sanghaifa/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.17/src/mpsc/mod.rs /Users/sanghaifa/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.17/src/mpsc/queue.rs /Users/sanghaifa/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.17/src/mpsc/sink_impl.rs /Users/sanghaifa/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.17/src/oneshot.rs
+
+/Users/sanghaifa/data/examples/rust/rust_async/target/debug/deps/futures_channel-d0522cd890f352e1.d: /Users/sanghaifa/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.17/src/lib.rs /Users/sanghaifa/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.17/src/lock.rs /Users/sanghaifa/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.17/src/mpsc/mod.rs /Users/sanghaifa/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.17/src/mpsc/queue.rs /Users/sanghaifa/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.17/src/mpsc/sink_impl.rs /Users/sanghaifa/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.17/src/oneshot.rs
+
+/Users/sanghaifa/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.17/src/lib.rs:
+/Users/sanghaifa/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.17/src/lock.rs:
+/Users/sanghaifa/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.17/src/mpsc/mod.rs:
+/Users/sanghaifa/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.17/src/mpsc/queue.rs:
+/Users/sanghaifa/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.17/src/mpsc/sink_impl.rs:
+/Users/sanghaifa/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-channel-0.3.17/src/oneshot.rs:

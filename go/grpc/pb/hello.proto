@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option go_package = "github.com/example/grpctest/api";
+
+service AgentService {
+    // 业务影子订阅，实时获得Config数据流.
+    // [EN] shadow subscription, and streaming shadow config.
+    rpc ServerSide(ServerSideRequest) returns (stream ServerSideResponse) {
+    }
+}
+
+message ServerSideRequest {
+    string name = 1;
+}
+
+message ServerSideResponse {
+    string name = 1;
+}

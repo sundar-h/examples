@@ -1,22 +1,22 @@
 fn main() {
-    let a = [1, 2, 3];
-    let b = a;
-    println!("{:?} {:#?}", a, b);
+    let rt = tokio::runtime::Builder::new_multi_thread()
+        .enable_all()
+        .build()
+        .unwrap();
+
+    rt.block_on(hello());
 }
 
-// fn main() {
-//     let a = [1, 2, 3];
-//     let b = a;
-//     {
-//         ::std::io::_print(
-//             match match (&a, &b) {
-//                 (arg0, arg1) => [
-//                     ::core::fmt::ArgumentV1::new(arg0, ::core::fmt::Debug::fmt),
-//                     ::core::fmt::ArgumentV1::new(arg1, ::core::fmt::Debug::fmt),
-//                 ],
-//             } {
-//                 ref args => unsafe { ::core::fmt::Arguments::new_v1(&["", " ", "\n"], args) },
-//             },
-//         );
-//     };
-// }
+async fn hello() {
+    println!("begin task");
+    // let _ = std::thread::Builder::new().spawn(run());
+    // let _ = tokio::spawn(move || {
+    //     run();
+    // });
+}
+
+async fn run() {
+    println!("begin run");
+    tokio::time::sleep(tokio::time::Duration::from_secs(3)).await;
+    println!("Hello World!")
+}

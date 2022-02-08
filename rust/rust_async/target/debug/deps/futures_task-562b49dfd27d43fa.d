@@ -1,0 +1,11 @@
+/Users/sanghaifa/data/examples/rust/rust_async/target/debug/deps/futures_task-562b49dfd27d43fa.rmeta: /Users/sanghaifa/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.17/src/lib.rs /Users/sanghaifa/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.17/src/spawn.rs /Users/sanghaifa/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.17/src/arc_wake.rs /Users/sanghaifa/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.17/src/waker.rs /Users/sanghaifa/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.17/src/waker_ref.rs /Users/sanghaifa/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.17/src/future_obj.rs /Users/sanghaifa/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.17/src/noop_waker.rs
+
+/Users/sanghaifa/data/examples/rust/rust_async/target/debug/deps/futures_task-562b49dfd27d43fa.d: /Users/sanghaifa/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.17/src/lib.rs /Users/sanghaifa/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.17/src/spawn.rs /Users/sanghaifa/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.17/src/arc_wake.rs /Users/sanghaifa/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.17/src/waker.rs /Users/sanghaifa/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.17/src/waker_ref.rs /Users/sanghaifa/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.17/src/future_obj.rs /Users/sanghaifa/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.17/src/noop_waker.rs
+
+/Users/sanghaifa/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.17/src/lib.rs:
+/Users/sanghaifa/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.17/src/spawn.rs:
+/Users/sanghaifa/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.17/src/arc_wake.rs:
+/Users/sanghaifa/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.17/src/waker.rs:
+/Users/sanghaifa/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.17/src/waker_ref.rs:
+/Users/sanghaifa/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.17/src/future_obj.rs:
+/Users/sanghaifa/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-task-0.3.17/src/noop_waker.rs:
