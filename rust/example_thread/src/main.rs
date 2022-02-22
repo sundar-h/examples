@@ -1,22 +1,17 @@
 fn main() {
-    let rt = tokio::runtime::Builder::new_multi_thread()
-        .enable_all()
-        .build()
-        .unwrap();
+    // Create some kind of future that we want our runtime to execute
+    let program = my_outer_stream.for_each(|my_outer_value| {
+        println!("Got value {:?} from the stream", my_outer_value);
+        let my_inner_future = future::ok(1);
 
-    rt.block_on(hello());
-}
+        let task = my_inner_future.and_then(|my_inner_value| {
+            println!("Got a value {:?} from second future", my_inner_value);
+            Ok(())
+        });
 
-async fn hello() {
-    println!("begin task");
-    // let _ = std::thread::Builder::new().spawn(run());
-    // let _ = tokio::spawn(move || {
-    //     run();
-    // });
-}
+        tokio::spawn(task);
+        Ok(())
+    });
 
-async fn run() {
-    println!("begin run");
-    tokio::time::sleep(tokio::time::Duration::from_secs(3)).await;
-    println!("Hello World!")
+    tokio::run(program);
 }
