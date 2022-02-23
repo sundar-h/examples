@@ -1,6 +1,5 @@
 <template>
   <div :style="fontstyle">
-    <slot></slot>
     <div class="rate" @mouseout="mouseOut">
       <!-- ☆ ★ -->
       <span @mouseover="mouseOver(num)" v-for="num in 5" :key="num">☆</span>
@@ -23,18 +22,20 @@ import { defineProps, computed, ref } from "vue";
 
 // defineProps 定义传输数据的格式
 let props = defineProps({
-  value: Number,
+  //   value: Number, // --> <!-- <Rate :value="score" @update-rate="update"></Rate> -->
+  modelValue: Number, // -->  <Rate v-model="score" theme="green"></Rate>
   theme: { type: String, default: "orange" },
 });
 
 let width = ref(props.value);
 
-// defineEmits 定义监听函数-> 向父组件发射数据 -> 通知父组件
-let emits = defineEmits("update-rate");
+// defineEmits 定义监听函数-> 向父组件发射数据
+// let emits = defineEmits("update-rate");
+let emits = defineEmits("update:modelValue");
 
-function onRate(num) {
-  emits("update-rate", num);
-}
+// function onRate(num) {
+//   emits("update-rate", num);
+// }
 
 function mouseOver(i) {
   width.value = i;
@@ -46,9 +47,9 @@ function mouseOut() {
 
 const fontwidth = computed(() => `width:${width.value}em;`);
 
-let rate = computed(() =>
-  "☆☆☆☆☆★★★★★".slice(5 - props.value, 10 - props.value)
-);
+// let rate = computed(() =>
+//   "☆☆☆☆☆★★★★★".slice(5 - props.value, 10 - props.value)
+// );
 
 const themObj = {
   black: "#000",
