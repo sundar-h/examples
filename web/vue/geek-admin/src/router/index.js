@@ -3,6 +3,7 @@ import { createRouter, createWebHashHistory } from "vue-router";
 import Home from "../pages/home.vue";
 import About from "../pages/about.vue";
 import Rate from "../pages/Rate.vue";
+import CRUD from "../pages/crud.vue";
 import TodolistVue from "../components/Todolist.vue";
 
 const routes = [
@@ -25,6 +26,11 @@ const routes = [
     path: "/todo",
     name: "Todolist",
     component: TodolistVue,
+  },
+  {
+    path: "/crud",
+    name: "CRUD",
+    component: CRUD,
   },
 ];
 
