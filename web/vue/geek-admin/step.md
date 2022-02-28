@@ -91,3 +91,12 @@ npm i -D ts-jest@26 @babel/preset-typesript @types/jest ## jest 适配typescript
 npm install -g degit
 
 npx degit nekobc1998923/vitecamp example-admin
+
+## 参考项目
+
+https://github.com/chuzhixin/vue-admin-better
+https://github.com/jekip/naive-ui-admin
+
+UI 组件库
+https://www.naiveui.com/zh-CN/os-theme/components/anchor
+https://element-plus.gitee.io/zh-CN/component/button.html
