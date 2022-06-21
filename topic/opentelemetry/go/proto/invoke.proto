@@ -1,0 +1,23 @@
+syntax = "proto3";
+package invoker;
+
+import "google/api/annotations.proto";
+
+
+service Invoker {
+    rpc Call(CallRequest) returns (CallReply) {
+    option (google.api.http) = {
+      get: "/v1/example/invoke"
+    };
+    }
+}
+
+message CallRequest {
+    // Request message contains the name to be greeted
+    string name = 1;
+}
+
+message CallReply {
+    // Reply contains the greeting message
+    string message = 1;
+}

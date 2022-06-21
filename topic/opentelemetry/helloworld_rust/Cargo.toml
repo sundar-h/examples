@@ -1,0 +1,45 @@
+[package]
+edition = "2021"
+name = "helloworld_rust"
+version = "0.1.0"
+[build-dependencies]
+tonic-build = "*"
+
+[dependencies]
+prost = "*"
+tonic = "*"
+tracing = "*"
+tracing-opentelemetry = "*"
+tonic-web = "0.3.0"
+tower-service = "0.3.2"
+hyper = "0.14.19"
+http = "0.2.8"
+tonic-reflection = "0.4.0"
+env_logger = "0.9.0"
+log = "0.4.17"
+bytes = "1.1.0"
+opentelemetry-prometheus = "0.10.0"
+actix-web = "4.1.0"
+prometheus = "0.13.1"
+
+[dependencies.actix-web-opentelemetry]
+features = [ "metrics"]
+version = "0.12"
+
+[dependencies.opentelemetry]
+features = ["rt-tokio", "metrics"]
+version = "0.17.0"
+
+[dependencies.opentelemetry-jaeger]
+features = ["rt-tokio", "collector_client", "isahc"]
+rost = "*"
+tonic = "*"
+version = "*"
+
+[dependencies.tokio]
+features = ["full"]
+version = "1.0"
+
+[dependencies.tracing-subscriber]
+features = ["env-filter", "std"]
+version = "*"

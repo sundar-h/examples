@@ -1,0 +1,1 @@
+thread 'main' panicked at 'env_logger::init_from_env should not be called after logger initialized: SetLoggerError(())',
