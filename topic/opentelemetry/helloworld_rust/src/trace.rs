@@ -40,29 +40,22 @@ impl<'a> Extractor for MetadataMap<'a> {
 }
 
 pub fn with_grpc_span(metadata: &tonic::metadata::MetadataMap) {
-    println!("{:?}", metadata);
+    println!("grpc: {:?}", metadata);
     let parent_cx = global::get_text_map_propagator(|prop| prop.extract(&MetadataMap(metadata)));
+    println!("{:#?}", parent_cx);
     tracing::Span::current().set_parent(parent_cx);
 }
 
 pub fn with_http_span(headers: &http::HeaderMap) {
     let ref metadata = tonic::metadata::MetadataMap::from_headers(headers.clone());
-    println!("{:?}", metadata);
+    println!("http: {:?}", metadata);
 
     let parent_cx = global::get_text_map_propagator(|prop| prop.extract(&MetadataMap(metadata)));
-    tracing::Span::current().set_parent(parent_cx);
+    println!("{:#?}", parent_cx);
+    // tracing::Span::current().set_parent(parent_cx);
+    let span = tracing::Span::current();
+    span.set_parent(parent_cx);
 }
-
-// pub fn add_span3(req: &http::Request<Body>) -> tracing::Span {
-//     let ref metadata = tonic::metadata::MetadataMap::from_headers(req.headers().clone());
-//     println!("metadata2: {:?}", metadata);
-//
-//     let parent_cx = global::get_text_map_propagator(|prop| prop.extract(&MetadataMap(metadata)));
-//     // tracing::Span::current().set_parent(parent_cx)
-//     let span = tracing::Span::current();
-//     span.set_parent(parent_cx);
-//     span
-// }
 
 pub fn tracing_init() {
     global::set_text_map_propagator(TraceContextPropagator::new());

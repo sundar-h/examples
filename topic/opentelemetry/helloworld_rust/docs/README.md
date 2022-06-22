@@ -7,3 +7,6 @@ GrpcWeb: 类似的写法
 参考:
 tonic: 的Svc和SvcFuture实现
 GrpcWeb: 实现
+
+RUSTFLAGS='-A warnings' cargo build
+cargo build -D warnings

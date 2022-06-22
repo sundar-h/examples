@@ -41,6 +41,7 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
     tokio::spawn(async move { svc.await });
     let greeter = GrpcMeter::new(greeter);
 
+    // 这种和grpc_gateway 不一样，不能自由定制route
     // tonic_web::enable(greeter);
     // let a = Svc {};
 

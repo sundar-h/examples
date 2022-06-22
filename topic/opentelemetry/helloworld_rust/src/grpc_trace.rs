@@ -35,20 +35,16 @@ where
 
     fn call(&mut self, req: Request<Body>) -> Self::Future {
         // 头部信息都是有的，在这里不起作用
+        let headers = req.headers().clone();
+        let fut = self.inner.call(req);
+
         println!("call trace...");
-        println!("req: {:#?}", req);
-        println!("req: {:#?}", req.uri());
-        with_http_span(req.headers());
-        let request = req.into_request();
-        // add_span(request.metadata());
-
-        println!("GrpcTrace wrapper....");
-        let fut = self.inner.call(request.into_inner());
-
-        Box::pin(async move {
+        let res = Box::pin(async move {
             let res = fut.await?;
             Ok(res)
-        })
+        });
+        with_http_span(&headers);
+        res
     }
 }
 

@@ -79,7 +79,6 @@ where
         });
         self.total.add(1, &[KeyValue::new("key", "value")]);
 
-        println!("OK OK");
         res
     }
 }
