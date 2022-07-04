@@ -3,7 +3,7 @@ syntax = "proto3";
 import "google/protobuf/timestamp.proto";
 
 //package sensetime.viper.lite.lambda.event;
-package a.b;
+package a.b.c.d.f;
 
 service Greeter {
     // Our SayHello rpc accepts HelloRequests and returns HelloReplies

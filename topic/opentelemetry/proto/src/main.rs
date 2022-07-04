@@ -1,15 +1,10 @@
-
 pub mod helloworld {
-    // tonic::include_proto!("sensetime.viper.lite.lambda.event");
-    tonic::include_proto!("a.b");
+    tonic::include_proto!("a.b.c.d.f");
 }
-
-// pub mod google {
-//     tonic::include_proto!("google.protobuf");
-// }
 
 use helloworld::HelloRequest;
 
 fn main() {
+    let r = HelloRequest::default();
     println!("Hello, world!");
 }

@@ -3,14 +3,16 @@ package main
 import (
 	"context"
 	"fmt"
+	"math/rand"
 	"net"
+	"net/http"
 	"time"
 
 	"github.com/example/telemetry/lib"
+	"google.golang.org/grpc/codes"
+	"google.golang.org/grpc/status"
 
 	"github.com/example/telemetry/telemetry"
-
-	"go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc"
 
 	"go.opentelemetry.io/otel/trace"
 
@@ -47,23 +49,39 @@ func (impl *invokerImpl) Close() {
 func (impl invokerImpl) Call(ctx context.Context, req *invoker.CallRequest) (*invoker.CallReply, error) {
 	fmt.Println("received request: ", req.GetName())
 
+	// runtime.HTTPStatusFromCode
+	if req.GetName() == "" {
+		return nil, status.Errorf(codes.InvalidArgument, "InvalidArgument")
+	}
+
+	msg, err := impl.call(ctx, req.GetName())
+	if err != nil {
+		return nil, err
+	}
+
 	return &invoker.CallReply{
-		Message: impl.call(ctx, req.GetName()),
+		Message: msg,
 	}, nil
 }
 
-func (impl invokerImpl) call(ctx context.Context, name string) string {
+func (impl invokerImpl) call(ctx context.Context, name string) (string, error) {
 	tr := otel.Tracer("invoke call")
 	_, span := tr.Start(ctx, "call",
-		trace.WithAttributes(attribute.String("args", name))) //span.SetAttributes(attribute.Key("testset").String("value"))
+		trace.WithAttributes(attribute.String("args", name))) // span.SetAttributes(attribute.Key("testset").String("value"))
 	defer span.End()
 
-	time.Sleep(100 * time.Millisecond)
+	s1 := rand.NewSource(time.Now().UnixNano())
+	r1 := rand.New(s1)
+	// time.Sleep(100 * time.Millisecond)
+	time.Sleep(time.Duration(r1.Int63n(100)) * time.Millisecond)
 	resp, err := impl.client.SayHello(ctx, &helloworld.HelloRequest{
 		Name: name,
 	})
-	lib.PanicIfErr(err)
-	return resp.GetMessage()
+	// lib.PanicIfErr(err)
+	if err != nil {
+		return "", err
+	}
+	return resp.GetMessage(), nil
 }
 
 func start() {
@@ -72,10 +90,18 @@ func start() {
 	lib.PanicIfErr(err)
 
 	s := grpc.NewServer(
-		//grpc.WithInsecure(),
-		grpc.UnaryInterceptor(otelgrpc.UnaryServerInterceptor()),
-		grpc.StreamInterceptor(otelgrpc.StreamServerInterceptor()),
+		// grpc.WithInsecure(),
+		grpc.UnaryInterceptor(lib.UnaryServerInterceptor()),
+		// grpc.UnaryInterceptor(otelgrpc.UnaryServerInterceptor()),
+		// grpc.StreamInterceptor(otelgrpc.StreamServerInterceptor()),
 	)
+	meter, err := telemetry.NewPrometheusExporter()
+	lib.PanicIfErr(err)
+	http.Handle("/metrics", meter)
+	go func() {
+		err := http.ListenAndServe(":8102", nil)
+		lib.PanicIfErr(err)
+	}()
 
 	println("dial rust...")
 	conn, err := lib.Dial("127.0.0.1:8102")
